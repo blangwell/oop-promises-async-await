@@ -47,3 +47,50 @@ gameTwo.score = 8.5;
 
 console.log(gameTwo);
 console.log(gameTwo.score);
+
+
+// Constructor Function
+function User(name) {
+    // this refers to the function
+    this.name = name;
+}
+
+// new 
+let adam = new User('adam');
+let pete = new User('pete');
+
+console.log(adam.name);
+console.log(pete.name);
+
+
+// constructor function template
+function NBAPlayer(name, team, threePointShooter) {
+    // this = {}
+    this.name = name;
+    this.team = team;
+    this.threePointShooter = threePointShooter;
+
+    // return this object
+
+}
+
+let steph = new NBAPlayer('steph curry', 'warriors', true);
+console.log(steph);
+console.log(steph.name);
+
+
+function videoGames(name, genre, rating, score) {
+    this.name = name;
+    this.genre = genre;
+    this.rating = rating;
+    this.score = score;
+}
+
+let ds3 = new videoGames('Dark Souls 3', 'ARPG', 'M', 9);
+console.log(ds3);
+
+let hzd = new videoGames('Horizon Zero Dawn', 'ARPG', 'T', 9);
+console.log(hzd);
+
+let fc5 = new videoGames('Farcry 5', 'FPS', 'M', 9);
+console.log(fc5);
