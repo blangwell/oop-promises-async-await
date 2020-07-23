@@ -148,18 +148,18 @@ fetch('https://api.github.com/users/blangwell') //pass in url as a string
     return response.json();
 })
 .then(data => {
-    console.log(data);
+    // console.log(data);
     let githubUrl = data.url; 
-    console.log(githubUrl);
+    // console.log(githubUrl);
     let githubUserName = data.login;
-    console.log(githubUserName);
+    // console.log(githubUserName);
     let githubName = data.name;
-    console.log(githubName);
+    // console.log(githubName);
 
     const barent = new GithubProfile(githubUserName, githubName, githubUrl);
-    console.log(barent);
+    // console.log(barent);
 
-    barent.intro();
+    // barent.intro();
 })
 
 fetch('https://api.github.com/users/Lizzwest')
@@ -168,5 +168,44 @@ fetch('https://api.github.com/users/Lizzwest')
 })
 .then(data => {
     const lizz = new GithubProfile(data.login, data.login, data.url);
-    console.log(lizz);
+    // console.log(lizz);
 })
+
+let isMomHappy = false;
+
+// Promise
+// let willIGetNewPhone = new Promise(
+//     function (resolve, reject) {
+//         if (isMomHappy) {
+//             let phone = {
+//                 brand: 'Samsung',
+//                 color: 'black'
+//             };
+//             resolve(phone); // fulfilled
+//         } else { // if not true, do this
+//             let reason = new Error('mom is not happy');
+//             reject(reason); // reject
+//         }
+
+//     }
+// );
+
+let willIGetNewPhone = new Promise((resolve, reject) => {
+    if (isMomHappy) {
+        const phone = {
+            brand: 'iPhone',
+            color: 'rose gold'
+
+        }
+        resolve(phone); 
+    }
+    else {
+        reject('no phone 4 u');
+    }
+})
+
+console.log(willIGetNewPhone);
+willIGetNewPhone.then(result => {
+    console.log(result);
+
+});
