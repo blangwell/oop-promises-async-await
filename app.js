@@ -156,10 +156,17 @@ fetch('https://api.github.com/users/blangwell') //pass in url as a string
     let githubName = data.name;
     console.log(githubName);
 
-    let barent = new GithubProfile(githubUserName, githubName, githubUrl);
+    const barent = new GithubProfile(githubUserName, githubName, githubUrl);
     console.log(barent);
 
     barent.intro();
 })
 
-//grab login name url
+fetch('https://api.github.com/users/Lizzwest')
+.then(response => {
+    return response.json();
+})
+.then(data => {
+    const lizz = new GithubProfile(data.login, data.login, data.url);
+    console.log(lizz);
+})
